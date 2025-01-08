@@ -1,25 +1,53 @@
+/* Import Cormorant Garamond from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+
+/* Define Cooper BT using @font-face */
+@font-face {
+    font-family: 'Cooper BT';
+    src: url('CooperBT.ttf') format('truetype'); /* Adjust the path to where your CooperBT.ttf is located */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Cormorant Garamond', serif; /* Body text uses Cormorant Garamond */
     margin: 0;
     padding: 0;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    position: relative;
+    background-image: url('bg.png'); /* Set the same background image for the body */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
 }
 
+/* Header */
 header {
-    background-color: #000; /* TEDx red */
+    background-color: rgba(0, 0, 0, 0.7); /* Higher opacity for header background */
     padding: 20px;
     text-align: center;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for header */
+    position: relative;
+    z-index: 1; /* Ensure header is above the background */
 }
 
 header img {
     max-width: 200px;
 }
 
+/* Navigation */
 nav {
-    background-color: #e62b1e; /* Black */
+    background-color: rgba(230, 43, 30, 0.7); /* TEDx red with opacity */
     color: #fff;
     padding: 10px;
     text-align: center;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for nav */
+    position: relative;
+    z-index: 1;
 }
 
 nav a {
@@ -33,51 +61,99 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Full-Width Content Section with Black Background and Lowered Opacity */
 section {
     padding: 20px;
+    font-family: 'Cormorant Garamond', serif; /* Body text uses Cormorant Garamond */
+    flex: 1; /* Allow sections to take up the remaining space */
+    position: relative;
+    color: #fff; /* White text for contrast */
+    z-index: 0; /* Ensures content section is below header/footer */
 }
 
+/* Footer */
 footer {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7); /* Higher opacity for footer background */
     color: #fff;
     text-align: center;
     padding: 10px;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for footer */
     position: relative;
-    bottom: 0;
-    width: 100%;
+    z-index: 1;
 }
 
+/* Container for sections */
 .container {
     max-width: 900px;
     margin: 0 auto;
 }
 
-.speaker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+/* Center all headings */
+h1, h2, h3 {
+    text-align: center;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for headings */
 }
 
+/* Speaker Grid */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px 0; /* Padding for spacing around the grid */
+}
+
+/* Speaker Card */
 .speaker-card {
     text-align: center;
     cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow of the synopsis text */
+    transition: transform 0.3s ease; /* Hover effect */
+    width: 100%; /* Ensure card width remains fixed */
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px); /* Slight hover lift effect */
 }
 
 .speaker-card img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%; /* Ensure the image takes up full width */
+    height: 250px; /* Consistent height */
+    object-fit: contain; /* Maintain aspect ratio while filling the space */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.speaker-card h3 {
+    font-family: 'Cooper BT', sans-serif;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Speaker Synopsis */
+.speaker-card .synopsis {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #fff;
+    height: 0; /* Initially hidden */
+    overflow: hidden; /* Prevent text overflow */
+    transition: height 0.3s ease; /* Smooth transition for expansion */
+    padding: 0 10px; /* Add some padding to the left and right */
+}
+
+.speaker-card.expanded .synopsis {
+    height: auto; /* Allow height to expand */
+    padding-top: 10px; /* Add padding to the top when expanded */
+    width: 100%; 
 }
 
 .speaker-card .hidden {
     display: none;
 }
 
-.speaker-card .synopsis {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #666;
-}
 
+
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -87,13 +163,16 @@ table th, table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    font-family: 'Cormorant Garamond', serif; /* Table text uses Cormorant Garamond */
 }
 
 table th {
-    background-color: #f2f2f2;
+    background-color: #000;
     font-weight: bold;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for table headers */
 }
 
+/* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -112,24 +191,38 @@ table th {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
+    font-family: 'Cooper BT', sans-serif; /* Cooper BT for scroll-to-top button */
 }
 
 .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
 }
-.theme-gif {
-    width: 100%;
-    height: 300px; /* Adjust this height as needed */
-    overflow: hidden;
-    position: relative;
-}
-/*what*/
 
-.theme-gif img.full-width {
+.countdown-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 400px;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto; /* Ensure the container is centered */
+}
+.label {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.time-segment {
+    display: inline-block;
+    margin: 0 10px;
+}
+.time-segment span {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
 }

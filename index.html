@@ -14,134 +14,40 @@
     </header>
     
     <nav>
-        <a href="#homepage">Home</a>
-        <a href="#about">About</a>
-        <a href="#about-team">About the Team</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#sponsors">Sponsors</a>
-        <a href="#signup">Signup</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="about-team.html">About the Team</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="sponsors.html">Partners</a>
+        <a href="contact.html">Contact Us</a>
     </nav>
 
     <section id="homepage" class="container">
         <h1>Welcome to TEDxBencoolen St Youth</h1>
-        <div class="theme-gif">
-            <img src="muse.gif" alt="Muse Theme" class="full-width">
-        </div>
-        
         <p>With the theme Muse: A Period of Reflection/A Source of Inspiration, we aim to explore how quiet introspection and moments of inspiration shape our actions and perspectives. It’s about discovering how silent reflection in our daily lives can move us to action, and using that understanding to foster growth and connection.
             This is an invitation to pause, think, and find meaning in some solitude — not just for yourself but for the world around you.</p>
         <p>Place/Time: <em>Add venue and time details here.</em></p>
-        <h3>What is TEDx?</h3>
-        <p>In the spirit of discovering and spreading ideas, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxBencoolen St Youth, where x = independently organized TED event. At our TEDx event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.</p>
-    </section>
-
-    <section id="about" class="container">
-        <h2>About TEDx</h2>
-        <p>In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)</p>
-
-        <h2>About TED</h2>
-        <p>TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change. 
-            Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. 
-            We welcome people from every discipline and culture who seek a deeper understanding of the world and connection with others, 
-            and we invite everyone to engage with ideas and activate them in your community.</p>
-        <p>TED began in 1984 as a conference where Technology, Entertainment and Design converged, 
-            but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business 
-            to education, arts and global issues. 
-            In addition to the TED Talks curated from our annual conferences and published on TED.com, 
-            we produce 
-            <a href="https://audiocollective.ted.com/">original podcasts</a>, 
-            <a href="https://www.ted.com/series">short video series</a>, 
-            <a href="https://ed.ted.com/">animated educational lessons (TED-Ed)</a> 
-            and TV programs that are translated into more than 100 languages and distributed via partnerships around the world. 
-            Each year, thousands of independently run 
-            <a href="https://www.ted.com/about/programs-initiatives/tedx-program">TEDx events</a>
-            bring people together to share ideas and bridge divides in communities on every continent. 
-            Through the 
-            <a href="https://www.audaciousproject.org/">Audacious Project</a>, 
-            TED has helped catalyze more than $3 billion in funding for projects that seek to make the world more beautiful, sustainable and just. 
-            In 2020, TED launched 
-            <a href="https://countdown.ted.com/">Countdown</a>, 
-            an initiative to accelerate solutions to the climate crisis and mobilize a movement for a net-zero future, and in 2023 TED launched 
-            <a href="https://www.ted.com/about/programs-initiatives/teddemocracy">TED Democracy</a>
-            to spark a new kind of conversation focused on realistic pathways towards a more vibrant and equitable future. 
-            View a full list of 
-            <a href="https://www.ted.com/about/programs-initiatives">TED's many programs and initiatives</a>.</p>
-        <p>Follow TED on 
-            <a href="https://www.facebook.com/TED">Facebook</a>, 
-            <a href="https://www.instagram.com/ted">Instagram</a>, 
-            <a href="https://www.linkedin.com/company/ted-conferences">LinkedIn</a>, 
-            <a href="https://www.tiktok.com/@tedtoks">TikTok</a>, and 
-            <a href="https://twitter.com/TEDTalks">X</a>.</p>
-    </section>
-
-    <section id="about-team" class="container">
-        <h2>About the Team</h2>
-        <p><strong>Team Member 1:</strong> Role</p>
-        <p><strong>Team Member 2:</strong> Role</p>
-        <p><strong>Team Member 3:</strong> Role</p>
-        <!-- Add more team members as needed -->
-    </section>
-
-    <section id="speakers" class="container">
-        <h2>Speakers</h2>
-        <div class="speaker-grid">
-            <!-- Speaker cards -->
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker1-placeholder.jpg" alt="Speaker 1">
-                <h3>Speaker 1</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 1's talk will appear here.</p>
+        <div class="countdown-container">
+            <div id="countdown" class="countdown">
+                <div class="time-segment" id="days">
+                    <span>00</span>
+                    <div class="label">Days</div>
+                </div>
+                <div class="time-segment" id="hours">
+                    <span>00</span>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="time-segment" id="minutes">
+                    <span>00</span>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="time-segment" id="seconds">
+                    <span>00</span>
+                    <div class="label">Seconds</div>
+                </div>
             </div>
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker2-placeholder.jpg" alt="Speaker 2">
-                <h3>Speaker 2</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 2's talk will appear here.</p>
-            </div>
-            <!-- Add more speaker cards as needed -->
         </div>
-    </section>
-
-    <section id="schedule" class="container">
-        <h2>Schedule</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Activity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>09:00 AM</td>
-                    <td>Opening Remarks</td>
-                </tr>
-                <tr>
-                    <td>09:30 AM</td>
-                    <td>Speaker 1</td>
-                </tr>
-                <!-- Add more schedule rows as needed -->
-            </tbody>
-        </table>
-    </section>
-
-    <section id="sponsors" class="container">
-        <h2>Thank You to Our Sponsors</h2>
-        <p><em>Add sponsor names and logos here.</em></p>
-    </section>
-
-    <section id="signup" class="container">
-        <h2>Signup</h2>
-        <p>Please sign up using <a href="https://forms.google.com" target="_blank">this Google Form</a>.</p>
-        <h3>FAQ</h3>
-        <div class="faq-item">
-            <h3>What is TEDx?</h3>
-            <p>TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How can I participate?</h3>
-            <p>You can sign up using the link above. More details will be shared soon.</p>
-        </div>
-        <!-- Add more FAQ items as needed -->
     </section>
 
     <footer>
@@ -149,6 +55,6 @@
     </footer>
 
     <div id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">&#8679;</div>
-
 </body>
 </html>
+
