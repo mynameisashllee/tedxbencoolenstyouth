@@ -1,12 +1,6 @@
-// Toggle visibility of synopsis on speaker cards
-function toggleSynopsis(element) {
-  const synopsis = element.querySelector('.synopsis');
-  if (synopsis.classList.contains('hidden')) {
-      synopsis.classList.remove('hidden');
-  } else {
-      synopsis.classList.add('hidden');
-  }
-  element.classList.toggle('expanded');
+function toggleMenu() {
+  const menuLinks = document.getElementById("menu-links");
+  menuLinks.classList.toggle("active");
 }
 
 // Scroll to the top of the page
@@ -25,21 +19,33 @@ document.addEventListener('scroll', () => {
   }
 });
 
-const targetDate = new Date('January 1, 2026 00:00:00').getTime();
+const targetDate = new Date('January 1, 2025 00:00:00').getTime();
 
-// Update the countdown every second
 const interval = setInterval(function() {
-    // Get the current date and time
     const now = new Date().getTime();
 
     // Find the distance between now and the target date
     const distance = targetDate - now;
 
     // Time calculations for days, hours, minutes, and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (days < 0) {
+      days = 0;
+    }
+    if (hours < 0) {
+      hours = 0;
+    }
+    if (minutes < 0) {
+      minutes = 0;
+    }
+    if (seconds < 0) {
+      seconds = 0;
+    }
+    
 
     // Update the HTML with the countdown values
     document.getElementById('days').children[0].textContent = days < 10 ? '0' + days : days;
@@ -47,3 +53,37 @@ const interval = setInterval(function() {
     document.getElementById('minutes').children[0].textContent = minutes < 10 ? '0' + minutes : minutes;
     document.getElementById('seconds').children[0].textContent = seconds < 10 ? '0' + seconds : seconds;
 }, 1000);
+
+let i = 0;
+let isDeleting = false; // Tracks if we are deleting text
+let txt = 'Muse'; // The text to type and delete
+let speed = 200; // Typing speed
+let deleteSpeed = 200; // Deleting speed
+let pauseTime = 1000; // Pause before deleting/typing again
+
+function typeWriter() {
+  const typedTextElement = document.getElementById("typedtext");
+
+  if (!isDeleting && i <= txt.length) {
+    // Typing phase
+    typedTextElement.innerHTML = txt.slice(0, i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } else if (isDeleting && i >= 0) {
+    // Deleting phase
+    typedTextElement.innerHTML = txt.slice(0, i);
+    i--;
+    setTimeout(typeWriter, deleteSpeed);
+  } else if (!isDeleting && i > txt.length) {
+    // Pause before deleting
+    isDeleting = true;
+    setTimeout(typeWriter, pauseTime);
+  } else if (isDeleting && i < 0) {
+    // Reset and start typing again
+    isDeleting = false;
+    i = 0;
+    setTimeout(typeWriter, pauseTime);
+  }
+}
+
+typeWriter();

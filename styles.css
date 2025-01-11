@@ -3,7 +3,14 @@
 
 
 @font-face {
-    font-family: 'Cooper BT';
+    font-family: 'Garet';
+    src: url('Garet-Book.ttf') format('truetype'); /* Adjust the path to where your CooperBT.ttf is located */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CooperBT';
     src: url('CooperBT.ttf') format('truetype'); /* Adjust the path to where your CooperBT.ttf is located */
     font-weight: normal;
     font-style: normal;
@@ -25,12 +32,15 @@ body {
     background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
 }
 
+a {
+    color: #e62b1e; /* TEDx red for links */
+}
 /* Header */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Higher opacity for header background */
+    background-color: rgba(0, 0, 0); /* Higher opacity for header background */
     padding: 20px;
     text-align: center;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for header */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for header */
     position: relative;
     z-index: 1; /* Ensure header is above the background */
 }
@@ -45,7 +55,7 @@ nav {
     color: #fff;
     padding: 10px;
     text-align: center;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for nav */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for nav */
     position: relative;
     z-index: 1;
 }
@@ -73,11 +83,11 @@ section {
 
 /* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.7); /* Higher opacity for footer background */
+    background-color: rgba(0, 0, 0, 0.5); /* Higher opacity for footer background */
     color: #fff;
     text-align: center;
     padding: 10px;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for footer */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for footer */
     position: relative;
     z-index: 1;
 }
@@ -86,13 +96,16 @@ footer {
 .container {
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Center all headings */
 h1, h2, h3 {
     text-align: center;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for headings */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for headings */
+    font-weight: bold;
 }
+
 
 /* Speaker Grid */
 .speaker-grid {
@@ -125,7 +138,7 @@ h1, h2, h3 {
 }
 
 .speaker-card h3 {
-    font-family: 'Cooper BT', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     margin-top: 10px;
     font-size: 1.2em;
 }
@@ -169,7 +182,7 @@ table th, table td {
 table th {
     background-color: #000;
     font-weight: bold;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for table headers */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for table headers */
 }
 
 /* Scroll to Top Button */
@@ -191,7 +204,7 @@ table th {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    font-family: 'Cooper BT', sans-serif; /* Cooper BT for scroll-to-top button */
+    font-family: 'Helvetica', sans-serif; /* Cooper BT for scroll-to-top button */
 }
 
 .scroll-to-top.visible {
@@ -205,10 +218,13 @@ table th {
     align-items: center; /* Center vertically */
     text-align: center;
     border-radius: 15px;
-    padding: 40px;
     max-width: 400px;
     width: 100%;
     margin: 0 auto; /* Ensure the container is centered */
+}
+
+.left {
+    text-align: left;
 }
 .label {
     font-size: 18px;
@@ -225,4 +241,116 @@ table th {
     font-size: 36px;
     font-weight: bold;
     color: #fff;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between grid items */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.team-member .name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+.team-member .role {
+    font-size: 1em;
+    color: red;
+    margin: 5px 0 0;
+}
+
+.typing-effect {
+    text-align: center;
+    font-family: 'CooperBT', sans-serif;
+    font-size: 2em;
+    color: #e62b1e; /* TEDx red */
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#typedtext, .cursor {
+    display: inline-block;
+    vertical-align: middle; /* Ensures the cursor aligns with the text */
+}
+
+.cursor {
+    background-color: transparent;
+    color: #e62b1e;
+    animation: blink 0.7s steps(2, start) infinite;
+    margin-left: 2px; /* Adds a small gap between the text and the cursor */
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.1%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Navigation Links */
+.menu-links {
+    display: flex; /* Default to flex for desktop */
+    justify-content: center;
+    gap: 15px; /* Space between links */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show the menu toggle */
+    }
+
+    .menu-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        background-color: rgba(230, 43, 30, 0.9); /* Background for the menu */
+        position: absolute;
+        top: 50px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 10;
+    }
+
+    .menu-links a {
+        color: #fff; /* Link color */
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    .menu-links a:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Highlight effect on hover */
+    }
+
+    .menu-links.active {
+        display: flex; /* Show menu when active */
+    }
 }

@@ -14,44 +14,25 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="about-team.html">About the Team</a>
-        <a href="speakers.html">Speakers</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="sponsors.html">Partners</a>
-        <a href="contact.html">Contact Us</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links" id="menu-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="about-team.html">About the Team</a>
+            <a href="speakers.html">Speakers</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="sponsors.html">Partners</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
     </nav>
 
     <section id="speakers" class="container">
         <h2>Speakers</h2>
-        <div class="speaker-grid">
-            <!-- Speaker 1 -->
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker1.png" alt="Speaker 1">
-                <h3>Speaker 1</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 1's talk will appear here.</p>
-            </div>
-            <!-- Speaker 2 -->
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker1.png" alt="Speaker 2">
-                <h3>Speaker 2</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 2's talk will appear here.</p>
-            </div>
-            <!-- Speaker 3 -->
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker1.png" alt="Speaker 3">
-                <h3>Speaker 3</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 3's talk will appear here.</p>
-            </div>
-            <!-- Speaker 4 -->
-            <div class="speaker-card" onclick="toggleSynopsis(this)">
-                <img src="speaker1.png" alt="Speaker 4">
-                <h3>Speaker 4</h3>
-                <p class="synopsis hidden">Synopsis of Speaker 4's talk will appear here.</p>
-            </div>
-            <!-- Add more speakers here as needed -->
-        </div>
+        <p id="comingsoon">TBA</p>
     </section>
     
 
