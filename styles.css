@@ -206,6 +206,7 @@ table th {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     font-family: 'Helvetica', sans-serif; /* Cooper BT for scroll-to-top button */
+    z-index: 20;
 }
 
 .scroll-to-top.visible {
