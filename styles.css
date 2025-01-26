@@ -323,6 +323,59 @@ table th {
     gap: 15px; /* Space between links */
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Stack logos vertically */
+    align-items: center; /* Center the logos horizontally */
+    gap: 30px; /* Space between logos */
+    padding: 20px 0;
+}
+
+/* Logo Item */
+.logo-item {
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    width: 30%; /* Fixed width for each logo item */
+}
+
+/* Logo */
+.logo {
+    width: 100%; /* Ensure logo takes up the full width of the item */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* Hover Effect for Logo */
+.logo:hover {
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Info Box */
+.info-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background for info */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    display: none;
+    color: #fff;
+    font-size: 0.9em;
+    width: 80vw; /* Info box takes up 90% of viewport width */
+    text-align: left; /* Left align the text */
+    position: relative;
+    left: 50%; /* Move the info box to the center */
+    transform: translateX(-50%); /* Adjust positioning so the box is centered */
+}
+
+/* Add a subtle fade-in effect for info boxes when toggled */
+.info-box p {
+    margin: 10px 0;
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -354,5 +407,17 @@ table th {
 
     .menu-links.active {
         display: flex; /* Show menu when active */
+    }
+    .info-box {
+        width: 200%; /* For smaller screens, use 95% of the container width */
+        max-width: none; /* Remove max-width to allow for full width on small screens */
+        left: 50%; /* Ensure the box remains centered */
+        transform: translateX(-50%); /* Keep the box centered */
+    }
+
+    /* Adjust text size and spacing for mobile */
+    .info-box p {
+        font-size: 0.8em; /* Slightly smaller font size on mobile */
+        line-height: 1.4; /* Increase line height for readability */
     }
 }

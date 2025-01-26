@@ -87,3 +87,16 @@ function typeWriter() {
 }
 
 typeWriter();
+
+function toggleInfo(logoNumber) {
+  const selectedBox = document.getElementById(`info-box-${logoNumber}`);
+
+  // Toggle the visibility of the clicked info box
+  if (selectedBox.style.display === 'block') {
+      selectedBox.style.display = 'none';
+  } else {
+      // Hide all other boxes first
+      document.querySelectorAll('.info-box').forEach(box => box.style.display = 'none');
+      selectedBox.style.display = 'block';
+  }
+}
