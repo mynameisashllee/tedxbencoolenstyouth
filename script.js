@@ -19,7 +19,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-const targetDate = new Date('March 22, 2025 00:00:00').getTime();
+const targetDate = new Date('March 22, 2025 14:00:00').getTime();
 
 const interval = setInterval(function() {
     const now = new Date().getTime();
