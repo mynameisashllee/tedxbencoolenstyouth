@@ -1,17 +1,8 @@
-/* Import Cormorant Garamond from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
-
-
-@font-face {
-    font-family: 'Garet';
-    src: url('Garet-Book.ttf') format('truetype'); /* Adjust the path to where your CooperBT.ttf is located */
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'CooperBT';
-    src: url('CooperBT.ttf') format('truetype'); /* Adjust the path to where your CooperBT.ttf is located */
+    src: url('assets/fonts/CooperBT.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,7 +17,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
     position: relative;
-    background-image: url('bg.png');
+    background-image: url('assets/sitewide/bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -40,7 +31,7 @@ header {
     background-color: rgba(0, 0, 0); /* Higher opacity for header background */
     padding: 20px;
     text-align: center;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for header */
+    font-family: 'Helvetica', sans-serif;
     position: sticky;
     z-index: 1; /* Ensure header is above the background */
 }
@@ -55,7 +46,7 @@ nav {
     color: #fff;
     padding: 10px;
     text-align: center;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for nav */
+    font-family: 'Helvetica', sans-serif;
     position: sticky;
     z-index: 1;
 }
@@ -87,7 +78,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for footer */
+    font-family: 'Helvetica', sans-serif;
     position: relative;
     z-index: 1;
     font-size: 10px;
@@ -103,7 +94,7 @@ footer {
 /* Center all headings */
 h1, h2, h3 {
     text-align: center;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for headings */
+    font-family: 'Helvetica', sans-serif;
     font-weight: bold;
 }
 
@@ -183,7 +174,7 @@ table th, table td {
 table th {
     background-color: #000;
     font-weight: bold;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for table headers */
+    font-family: 'Helvetica', sans-serif;
 }
 
 /* Scroll to Top Button */
@@ -205,7 +196,7 @@ table th {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    font-family: 'Helvetica', sans-serif; /* Cooper BT for scroll-to-top button */
+    font-family: 'Helvetica', sans-serif;
     z-index: 20;
 }
 
@@ -358,9 +349,8 @@ table th {
 .info-box {
     margin-top: 15px;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.3); /* Dark background for info */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background for info */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
     display: none;
     color: #fff;
     font-size: 0.9em;
