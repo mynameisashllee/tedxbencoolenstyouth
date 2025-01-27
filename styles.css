@@ -18,7 +18,7 @@
 
 /* General Styles */
 body {
-    font-family: 'Cormorant Garamond', serif; /* Body text uses Cormorant Garamond */
+    font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -26,10 +26,10 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
     position: relative;
-    background-image: url('bg.png'); /* Set the same background image for the body */
+    background-image: url('bg.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
+    background-attachment: fixed;
 }
 
 a {
@@ -345,7 +345,7 @@ table th {
     height: auto;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
-    background-color: #fff;
+    border-radius: 10px;
 }
 
 /* Hover Effect for Logo */
