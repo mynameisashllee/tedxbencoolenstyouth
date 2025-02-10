@@ -107,6 +107,11 @@ h1, h2, h3 {
     padding: 20px 0; /* Padding for spacing around the grid */
 }
 
+.goh-grid {
+    display: grid;
+    padding: 20px 0; /* Padding for spacing around the grid */
+}
+
 /* Speaker Card */
 .speaker-card {
     text-align: center;
@@ -238,7 +243,7 @@ table th {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
     gap: 20px; /* Space between grid items */
     text-align: center;
     margin-top: 20px;
@@ -255,6 +260,11 @@ table th {
     font-size: 1em;
     color: red;
     margin: 5px 0 0;
+}
+.team-member #link {
+    font-size: 1.2em;
+    margin: 5px 5px 5px;
+    text-decoration: none;
 }
 
 .typing-effect {
@@ -365,6 +375,68 @@ table th {
 /* Add a subtle fade-in effect for info boxes when toggled */
 .info-box p {
     margin: 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    width: 60%;
+    max-width: 800px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: left;
+}
+.modal-body {
+    display: flex;
+    align-items: center;
+}
+.modal-body img {
+    width: 40%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.modal-info {
+    padding-left: 20px;
+}
+.tags button {
+    margin: 5px 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.tags button:hover {
+    background-color: #555;
+}
+.modal-text {
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 /* Responsive Design for Mobile */

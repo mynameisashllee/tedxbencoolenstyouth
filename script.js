@@ -100,3 +100,29 @@ function toggleInfo(logoNumber) {
       selectedBox.style.display = 'block';
   }
 }
+
+function openModal(name, topic, imgSrc, bio, description) {
+  document.getElementById('modalName').innerText = name;
+  document.getElementById('modalTopic').innerText = topic;
+  document.getElementById('modalImage').src = imgSrc;
+  document.getElementById('modalBio').textContent = bio;
+  document.getElementById('modalDescription').textContent = description;
+  document.getElementById('speakerModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('speakerModal').style.display = 'none';
+}
+
+function toggleContent(type) {
+  let bio = document.getElementById('modalBio');
+  let description = document.getElementById('modalDescription');
+  
+  if (type === 'bio') {
+      bio.classList.toggle('hidden');
+      description.classList.add('hidden');
+  } else {
+      description.classList.toggle('hidden');
+      bio.classList.add('hidden');
+  }
+}
