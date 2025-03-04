@@ -46,8 +46,6 @@ const interval = setInterval(function() {
       seconds = 0;
     }
     
-
-    // Update the HTML with the countdown values
     document.getElementById('days').children[0].textContent = days < 10 ? '0' + days : days;
     document.getElementById('hours').children[0].textContent = hours < 10 ? '0' + hours : hours;
     document.getElementById('minutes').children[0].textContent = minutes < 10 ? '0' + minutes : minutes;

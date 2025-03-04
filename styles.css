@@ -326,9 +326,10 @@ table th {
 
 .logo-container {
     display: flex;
-    flex-direction: column; /* Stack logos vertically */
-    align-items: center; /* Center the logos horizontally */
-    gap: 30px; /* Space between logos */
+    flex-direction: column; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px; 
     padding: 20px 0;
 }
 
